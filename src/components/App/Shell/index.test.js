@@ -8,7 +8,11 @@ import App from './index'
 describe('App', () => {
   const app = shallow(<App />)
 
-  it('renders an application Shell', () => {
-    expect(app.find('Shell')).to.have.length(1)
+  it('renders a Provider', () => {
+    expect(app.find('Provider')).to.have.length(1)
+  })
+
+  it('renders a Router', () => {
+    expect(app.find('Router')).to.have.length(1)
   })
 })

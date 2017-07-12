@@ -1,11 +1,9 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react'
+import Shell from './Shell'
 
-class App extends Component {
-  render() {
-    return <div />;
-  }
-}
+const App = (props: any): React$Element<any> =>
+  <Shell />
 
-export default App;
+export default App
