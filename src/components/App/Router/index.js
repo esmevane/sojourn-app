@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Router as RouterDom } from 'react-router-dom'
-import createHistory from 'createHistory'
+import createHistory from './createHistory'
 
 type RouterProps = { children?: React$Element<any> }
 
