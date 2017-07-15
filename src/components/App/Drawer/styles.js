@@ -1,6 +1,7 @@
 // @flow
 
 import styled from 'styled-components'
+import { Backdrop as BaseBackdrop } from 'components/App/styles'
 import * as Theme from 'themes'
 
 const slideLeft = ({ show }) =>
@@ -8,28 +9,8 @@ const slideLeft = ({ show }) =>
     ? 'translate3d(0, 0, 0)'
     : 'translate3d(100vw, 0, 0)'
 
-const fadeIn = ({ show }) =>
-  show
-    ? Theme.shadow
-    : Theme.transparent
-
-export const Backdrop = styled.div`
-  background: ${fadeIn};
-
-  display: flex;
-  justify-content:flex-end;
-  align-items: center;
-  align-content: center;
-
-  overflow: hidden;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+export const Backdrop = BaseBackdrop.extend`
   z-index: 2;
-
-  pointer-events: none;
-  transition: ${Theme.transition};
-  transition-delay: ${Theme.transition};
 `
 
 export const Container = styled.div`

@@ -1,13 +1,14 @@
 // @flow
 
 import React from 'react'
-import Shell from './Shell'
+
 import Content from './Content'
-import Letterhead from './Letterhead'
+import Drawer from './Drawer'
 import Glance from './Glance'
-import Menu from 'components/Menu'
-import Drawer from 'components/Drawer'
-import Modal from 'components/Modal'
+import Letterhead from './Letterhead'
+import Menu from './Menu'
+import Modal from './Modal'
+import Shell from './Shell'
 
 import { Layout } from './styles'
 
