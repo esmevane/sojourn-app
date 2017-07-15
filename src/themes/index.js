@@ -11,3 +11,6 @@ export const background = chroma('cornsilk')
   .desaturate(0.3)
   .brighten(0.3)
   .css()
+
+export const shade = chroma(foreground).alpha(0.8).css()
+export const boxShadow = `0 0 24px -4px ${shade}`

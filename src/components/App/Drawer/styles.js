@@ -15,7 +15,7 @@ export const Backdrop = BaseBackdrop.extend`
 
 export const Container = styled.div`
   background: ${Theme.background};
-  box-shadow: 0 0 24px -4px ${Theme.foreground};
+  box-shadow: ${Theme.boxShadow};
 
   width: 30vw;
   height: 100vh;

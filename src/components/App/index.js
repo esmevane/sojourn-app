@@ -12,11 +12,15 @@ import Shell from './Shell'
 
 import { Layout } from './styles'
 
+import Editor from 'components/Editor'
+
 const App = (props: any): React$Element<any> =>
   <Shell>
     <Layout>
       <Letterhead />
-      <Content />
+      <Content>
+        <Editor />
+      </Content>
       <Glance />
       <Menu />
       <Drawer />
