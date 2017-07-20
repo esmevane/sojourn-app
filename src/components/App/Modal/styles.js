@@ -10,6 +10,7 @@ const slideUp = ({ show }) =>
     : 'translate3d(0, 100vh, 0)'
 
 export const Backdrop = BaseBackdrop.extend`
+  justify-content: center;
   z-index: 4;
 `
 

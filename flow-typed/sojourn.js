@@ -6,9 +6,10 @@ declare type Title = string
 declare interface Note { +id: Id, +title: Title, +content: Content }
 
 declare type Action = { +type: string }
-declare type ModalState = { +show: boolean }
-declare type DrawerState = { +show: boolean }
-declare type MenuState = { +show: boolean }
+declare type Showable = { +show: boolean }
+declare type ModalState = Showable
+declare type DrawerState = Showable
+declare type MenuState = Showable
 
 declare type UiState = {
   +drawer: DrawerState,
@@ -17,7 +18,9 @@ declare type UiState = {
 }
 
 declare type State = { +ui: UiState }
+declare type HasContent = { content: Content }
 declare type HasChildren = { children?: any }
+declare type HasEditorState = { editorState: Draft$EditorState }
 
 declare interface Storage {
   get(key: string): any,

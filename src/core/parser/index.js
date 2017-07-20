@@ -8,5 +8,5 @@ const sanitize =
     ? string => string
     : domSanitizer
 
-export const parse: Parser = content =>
+export const parse: Parse = content =>
   sanitize(markdown.toHTML(content))

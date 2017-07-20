@@ -1,7 +1,5 @@
 // @flow
 
-import Store from "core/store"
-
 const memory: any = {}
 
 export default class Memory implements Storage {

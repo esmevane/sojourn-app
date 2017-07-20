@@ -1,7 +1,5 @@
 // @flow
 
-import NoteEntity from "core/notes/entity"
-
 export const noContent = (note: Note): boolean =>
   note.content === undefined || note.content.length === 0
 

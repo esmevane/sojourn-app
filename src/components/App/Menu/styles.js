@@ -10,6 +10,7 @@ const slideRight = ({ show }) =>
     : 'translate3d(-100vw, 0, 0)'
 
 export const Backdrop = BaseBackdrop.extend`
+  justify-content: flex-start;
   z-index: 3;
 `
 

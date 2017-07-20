@@ -10,14 +10,17 @@ import Menu from './Menu'
 import Modal from './Modal'
 import Shell from './Shell'
 
-import { Layout } from './styles'
+import { Headline, Layout, Tagline } from './styles'
 
 import Editor from 'components/Editor'
 
 const App = (props: any): React$Element<any> =>
   <Shell>
     <Layout>
-      <Letterhead />
+      <Letterhead>
+        <Headline>sojourn</Headline>
+        <Tagline>journal away</Tagline>
+      </Letterhead>
       <Content>
         <Editor />
       </Content>

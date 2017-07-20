@@ -1,7 +1,6 @@
 // @flow
 
 import events from "events"
-import Store from "core/store"
 import NoteEntity from "./entity"
 
 const { EventEmitter } = events
@@ -12,7 +11,7 @@ export const NOTES_CREATE = "notes.create"
 export const NOTES_UPDATE = "notes.update"
 export const NOTES_REMOVE = "notes.remove"
 
-export default class Articles {
+export default class Notes {
   events: EventEmitter = new EventEmitter()
   store: Storage
 

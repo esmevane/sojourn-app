@@ -12,7 +12,6 @@ export const Backdrop = styled.div`
   background: ${fadeIn};
 
   display: flex;
-  justify-content:flex-end;
   align-items: center;
   align-content: center;
 
@@ -36,4 +35,14 @@ export const Layout = styled.div`
   height: 100%;
   width: 100%;
   z-index: 1;
+`
+
+export const Headline = styled.h1`
+  color: ${Theme.shadow};
+  font-weight: lighter;
+`
+
+export const Tagline = Headline.extend`
+  color: ${Theme.lightShadow};
+  padding-left: 0.5em;
 `
