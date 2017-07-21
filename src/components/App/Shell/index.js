@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react'
-import Router from 'components/App/Router'
-import Provider from 'components/App/Provider'
+import RouterProvider from 'components/App/RouterProvider'
+import ReduxProvider from 'components/App/ReduxProvider'
 
 type ShellProps = { children?: any }
 
@@ -10,10 +10,10 @@ const maybeFirstChild = children =>
   React.Children.toArray(children)[0] || <div />
 
 const Shell = ({ children }: ShellProps): React$Element<any> =>
-  <Router>
-    <Provider>
+  <RouterProvider>
+    <ReduxProvider>
       { maybeFirstChild(children) }
-    </Provider>
-  </Router>
+    </ReduxProvider>
+  </RouterProvider>
 
 export default Shell

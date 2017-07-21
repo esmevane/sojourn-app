@@ -32,7 +32,7 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "start": "NODE_PATH=src react-scripts start",
-    "test": "NODE_PATH=src react-scripts test",
+    "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "types": "flow-typed install"
   }
 }

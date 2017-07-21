@@ -8,11 +8,11 @@ import App from './index'
 describe('App', () => {
   const app = shallow(<App />)
 
-  it('renders a Provider', () => {
-    expect(app.find('Provider')).to.have.length(1)
+  it('renders a ReduxProvider', () => {
+    expect(app.find('ReduxProvider')).to.have.length(1)
   })
 
-  it('renders a Router', () => {
-    expect(app.find('Router')).to.have.length(1)
+  it('renders a RouterProvider', () => {
+    expect(app.find('RouterProvider')).to.have.length(1)
   })
 })

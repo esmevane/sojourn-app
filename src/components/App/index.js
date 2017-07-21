@@ -10,9 +10,10 @@ import Menu from './Menu'
 import Modal from './Modal'
 import Shell from './Shell'
 
+
 import { Headline, Layout, Tagline } from './styles'
 
-import Editor from 'components/Editor'
+import Greeting from 'components/Greeting'
 
 const App = (props: any): React$Element<any> =>
   <Shell>
@@ -22,7 +23,7 @@ const App = (props: any): React$Element<any> =>
         <Tagline>journal away</Tagline>
       </Letterhead>
       <Content>
-        <Editor />
+        <Greeting />
       </Content>
       <Glance />
       <Menu />
