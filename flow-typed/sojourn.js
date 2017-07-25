@@ -1,3 +1,5 @@
+import { AnimatedValue } from 'animated'
+
 declare type Parse = string => string
 declare type Content = string
 declare type Id = string
@@ -18,9 +20,22 @@ declare type UiState = {
 }
 
 declare type State = { +ui: UiState }
+declare type HasAnimationState = { animate: AnimatedValue }
+declare type HasAnimation = { animation?: Animation }
 declare type HasContent = { content: Content }
 declare type HasChildren = { children?: any }
-declare type HasEditorState = { editorState: Draft$EditorState }
+declare type HasKey = { key: string }
+declare type HasLocation = { location: History$Location }
+
+declare type AnimationStart = 'AnimationStart'
+declare type AnimationEnd = 'AnimationEnd'
+declare type AnimationMessage = AnimationStart | AnimationEnd
+declare type AnimationValue = AnimatedValue
+
+declare interface Animator {
+  spring(value: AnimatedValue, config: AnimationConfig): Animator,
+  start(callback: ?Function): void
+}
 
 declare interface Storage {
   get(key: string): any,
@@ -29,3 +44,5 @@ declare interface Storage {
   remove(key: string): void,
   flush(): void
 }
+
+declare type Stylesheet = { [string]: string }

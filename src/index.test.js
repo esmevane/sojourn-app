@@ -4,6 +4,10 @@ import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
 
+// JS Dom doesn't know about requestAnimationFrame?
+//
+if (!global.requestAnimationFrame) global.requestAnimationFrame = () => {}
+
 import App from 'components/App'
 
 describe('Integrations', () => {
