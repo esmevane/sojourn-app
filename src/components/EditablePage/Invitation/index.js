@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import { Container, Content } from './styles'
 
-const Greeting = (props: any): React$Element<any> =>
+const Invitation = (props: any): React$Element<any> =>
   <Container>
     <Content>
       Hello!
@@ -18,4 +18,4 @@ const Greeting = (props: any): React$Element<any> =>
     </Content>
   </Container>
 
-export default Greeting
+export default Invitation

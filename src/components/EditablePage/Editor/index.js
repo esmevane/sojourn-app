@@ -3,14 +3,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Container, Content } from './styles'
+import { Container, Content, Controls } from './styles'
+import DraftingArea from './DraftingArea'
 
-const Greeting = (props: any): React$Element<any> =>
+const Editor = (props: any): React$Element<any> =>
   <Container>
     <Content>
-      I'm an editor!
-      <Link to="/">Back</Link>
+      <DraftingArea />
     </Content>
+    <Controls>
+      <Link to="/">Back</Link>
+    </Controls>
   </Container>
 
-export default Greeting
+export default Editor

@@ -1,4 +1,5 @@
 import { AnimatedValue } from 'animated'
+import { EditorState } from 'draft-js'
 
 declare type Parse = string => string
 declare type Content = string
@@ -7,7 +8,7 @@ declare type Title = string
 
 declare interface Note { +id: Id, +title: Title, +content: Content }
 
-declare type Action = { +type: string }
+declare type Action = { +type: string, +payload?: {} }
 declare type Showable = { +show: boolean }
 declare type ModalState = Showable
 declare type DrawerState = Showable
@@ -24,6 +25,7 @@ declare type HasAnimationState = { animate: AnimatedValue }
 declare type HasAnimation = { animation?: Animation }
 declare type HasContent = { content: Content }
 declare type HasChildren = { children?: any }
+declare type HasEditorState = { editorState: typeof EditorState }
 declare type HasKey = { key: string }
 declare type HasLocation = { location: History$Location }
 

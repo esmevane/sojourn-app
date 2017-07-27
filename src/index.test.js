@@ -3,10 +3,9 @@
 import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
+import { isIntegrationTest } from 'test/helpers'
 
-// JS Dom doesn't know about requestAnimationFrame?
-//
-if (!global.requestAnimationFrame) global.requestAnimationFrame = () => {}
+isIntegrationTest()
 
 import App from 'components/App'
 
