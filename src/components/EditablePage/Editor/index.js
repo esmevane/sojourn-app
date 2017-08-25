@@ -8,12 +8,12 @@ import DraftingArea from './DraftingArea'
 
 const Editor = (props: any): React$Element<any> =>
   <Container>
-    <Content>
-      <DraftingArea />
-    </Content>
     <Controls>
       <Link to="/">Back</Link>
     </Controls>
+    <Content>
+      <DraftingArea />
+    </Content>
   </Container>
 
 export default Editor

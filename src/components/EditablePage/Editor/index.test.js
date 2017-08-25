@@ -15,5 +15,4 @@ describe('Editor', () => {
   it('renders a Link back', () => {
     expect(editor.find('Link')).to.have.length(1)
   })
-
 })

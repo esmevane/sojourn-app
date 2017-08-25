@@ -1,13 +1,11 @@
 // @flow
 
 import styled from 'styled-components'
-import { Backdrop as BaseBackdrop } from 'components/App/styles'
+import { Backdrop as BaseBackdrop } from 'themes/components'
 import * as Theme from 'themes'
 
 const slideUp = ({ show }) =>
-  show
-    ? 'translate3d(0, 0, 0)'
-    : 'translate3d(0, 100vh, 0)'
+  show ? 'translate3d(0, 0, 0)' : 'translate3d(0, 100vh, 0)'
 
 export const Backdrop = BaseBackdrop.extend`
   justify-content: center;
@@ -24,5 +22,5 @@ export const Container = styled.div`
   max-height: 80vh;
 
   transition: ${Theme.transition};
-  transform: ${slideUp}
+  transform: ${slideUp};
 `

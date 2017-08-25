@@ -3,7 +3,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import "font-awesome/css/font-awesome.css"
+import 'font-awesome/css/font-awesome.css'
 import 'fonts/mono/overpass.css'
 import 'index.css'
 

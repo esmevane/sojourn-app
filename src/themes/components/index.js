@@ -3,10 +3,7 @@
 import styled from 'styled-components'
 import * as Theme from 'themes'
 
-const fadeIn = ({ show }) =>
-  show
-    ? Theme.shadow
-    : Theme.transparent
+const fadeIn = ({ show }) => (show ? Theme.shadow : Theme.transparent)
 
 export const Backdrop = styled.div`
   background: ${fadeIn};
@@ -29,20 +26,10 @@ export const Backdrop = styled.div`
 export const Layout = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 2fr 20fr 1fr;
+  grid-template-rows: 80px minmax(auto, 0.95fr) 20px;
 
   position: relative;
   height: 100%;
   width: 100%;
   z-index: 1;
-`
-
-export const Headline = styled.h1`
-  color: ${Theme.shadow};
-  font-weight: lighter;
-`
-
-export const Tagline = Headline.extend`
-  color: ${Theme.lightShadow};
-  padding-left: 0.5em;
 `
