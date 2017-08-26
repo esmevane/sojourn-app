@@ -1,9 +1,9 @@
 // @flow
 
 import { combineReducers } from 'redux'
-import modal from 'reducers/modal'
-import menu from 'reducers/menu'
-import drawer from 'reducers/drawer'
+import modal from 'state/reducers/modal'
+import menu from 'state/reducers/menu'
+import drawer from 'state/reducers/drawer'
 
 export default () =>
   combineReducers({

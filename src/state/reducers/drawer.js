@@ -1,13 +1,10 @@
 // @flow
 
-import * as Actions from 'actions'
+import * as Actions from 'state/actions'
 
 const defaults: DrawerState = { show: false }
 
-const drawer = (
-  state: DrawerState = defaults,
-  action: Action
-): DrawerState => {
+const drawer = (state: DrawerState = defaults, action: Action): DrawerState => {
   switch (action.type) {
     case Actions.HideDrawer:
       return { ...state, show: false }

@@ -1,6 +1,6 @@
 // @flow
 
-import * as Actions from 'actions'
+import * as Actions from 'state/actions'
 
 const defaults: ModalState = { show: false }
 
