@@ -6,6 +6,8 @@ import createSagaMiddleware from 'redux-saga'
 import createReducers from './createReducers'
 import createSagas from './createSagas'
 
+export * from './connectors'
+
 export const createStore = (): Redux.Store => {
   const sagas = createSagaMiddleware()
 

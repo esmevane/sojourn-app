@@ -1,10 +1,14 @@
 // @flow
 
-import { connect } from 'react-redux'
-import View from './view'
+import React from 'react'
+import { Backdrop, Container } from './styles'
+import * as State from 'state'
 
-const mapStateToProps = (state: State): MenuState => (
-  { show: state.ui.menu.show }
-)
+const Menu = ({ children, show }: HasChildren & MenuState) =>
+  <Backdrop show={show}>
+    <Container show={show}>
+      {children}
+    </Container>
+  </Backdrop>
 
-export default connect(mapStateToProps)(View)
+export default State.connectMenu(Menu)

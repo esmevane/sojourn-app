@@ -1,10 +1,14 @@
 // @flow
 
-import { connect } from 'react-redux'
-import View from './view'
+import React from 'react'
+import * as State from 'state'
+import { Backdrop, Container } from './styles'
 
-const mapStateToProps = (state: State): ModalState => (
-  { show: state.ui.modal.show }
-)
+const Modal = ({ children, show }: HasChildren & ModalState) =>
+  <Backdrop show={show}>
+    <Container show={show}>
+      {children}
+    </Container>
+  </Backdrop>
 
-export default connect(mapStateToProps)(View)
+export default State.connectModal(Modal)
