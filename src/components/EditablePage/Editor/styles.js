@@ -12,7 +12,7 @@ export const Container = styled.section`
 `
 
 export const Content = styled.div`
-  font-family: 'Overpass Mono';
+  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   width: 50%;
   padding-top: 1em;

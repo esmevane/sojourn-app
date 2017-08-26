@@ -3,8 +3,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import 'font-awesome/css/font-awesome.css'
-import 'fonts/mono/overpass.css'
+import 'typeface-open-sans'
+import 'typeface-overpass-mono'
 import 'index.css'
 
 import App from 'components/App'

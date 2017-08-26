@@ -20,19 +20,16 @@ export const Glance = styled.footer`
 
 export const Letterhead = styled.header`
   box-shadow: ${Theme.boxShadow};
+  color: ${Theme.foreground};
 
   display: flex;
   justify-content: center;
 
-  padding: 0 1em;
+  padding: 0.5em;
 `
 
 export const Headline = styled.h1`
   color: ${Theme.shadow};
-  font-weight: lighter;
-`
-
-export const Tagline = Headline.extend`
-  color: ${Theme.lightShadow};
-  padding-left: 0.5em;
+  font-family: 'Overpass Mono';
+  font-size: 1.5em;
 `

@@ -16,7 +16,9 @@
     "redux": "^3.7.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-saga": "^0.15.4",
-    "styled-components": "^2.1.0"
+    "styled-components": "^2.1.0",
+    "typeface-open-sans": "^0.0.35",
+    "typeface-overpass-mono": "^0.0.35"
   },
   "devDependencies": {
     "chai": "^4.0.2",
