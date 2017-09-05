@@ -8,8 +8,8 @@ import Editor from './index'
 describe('Editor', () => {
   const editor = shallow(<Editor />)
 
-  it('renders a DraftingArea', () => {
-    expect(editor.find('DraftingArea')).to.have.length(1)
+  it('renders a connected DraftingArea', () => {
+    expect(editor.find('Connect(DraftingArea)')).to.have.length(1)
   })
 
   it('renders a Link back', () => {

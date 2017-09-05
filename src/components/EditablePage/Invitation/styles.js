@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import * as Theme from 'themes'
 
 export const Container = styled.section`
-  position: absolute;
-  width: 100%;
   display: flex;
   justify-content: center;
+
   padding-top: 1em;
 `
 

@@ -12,7 +12,7 @@ const Editor = (props: any): React$Element<any> =>
       <Link to="/">Back</Link>
     </Controls>
     <Content>
-      <DraftingArea />
+      <DraftingArea {...props} />
     </Content>
   </Container>
 

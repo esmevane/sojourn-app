@@ -4,7 +4,7 @@ import React from 'react'
 import * as State from 'state'
 import { Backdrop, Container } from './styles'
 
-const Modal = ({ children, show }: HasChildren & ModalState) =>
+const Modal = ({ children, show }: HasChildren & Showable) =>
   <Backdrop show={show}>
     <Container show={show}>
       {children}

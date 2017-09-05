@@ -2,9 +2,9 @@
 
 import * as Actions from 'state/actions'
 
-const defaults: MenuState = { show: false }
+const defaults: Showable = { show: false }
 
-const menu = (state: MenuState = defaults, action: Action): MenuState => {
+const menu = (state: Showable = defaults, action: Action): Showable => {
   switch (action.type) {
     case Actions.HideMenu:
       return { ...state, show: false }

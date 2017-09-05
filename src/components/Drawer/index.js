@@ -4,7 +4,7 @@ import React from 'react'
 import * as State from 'state'
 import { Backdrop, Container } from './styles'
 
-const Drawer = ({ children, show }: HasChildren & DrawerState) =>
+const Drawer = ({ children, show }: HasChildren & Showable) =>
   <Backdrop show={show}>
     <Container show={show}>
       {children}

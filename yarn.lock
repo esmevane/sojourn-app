@@ -2084,6 +2084,12 @@ draft-js-buttons@^2.0.0-rc5:
   dependencies:
     union-class-names "^1.0.0"
 
+draft-js-export-html@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/draft-js-export-html/-/draft-js-export-html-0.6.0.tgz#cc80f0544c43d0a7fedbc53c0cb0914e8090f769"
+  dependencies:
+    draft-js-utils ">=0.2.0"
+
 draft-js-inline-toolbar-plugin@beta:
   version "2.0.0-rc5"
   resolved "https://registry.yarnpkg.com/draft-js-inline-toolbar-plugin/-/draft-js-inline-toolbar-plugin-2.0.0-rc5.tgz#25b81d23837aa5d35bf744be4037430317555069"
@@ -2115,6 +2121,10 @@ draft-js-side-toolbar-plugin@beta:
     immutable "~3.7.4"
     prop-types "^15.5.8"
     union-class-names "^1.0.0"
+
+draft-js-utils@>=0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/draft-js-utils/-/draft-js-utils-0.2.0.tgz#2403a314a055f73952517ef96a7cc4ccdf132c4f"
 
 draft-js@^0.10.1:
   version "0.10.1"

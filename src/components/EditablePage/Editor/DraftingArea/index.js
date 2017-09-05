@@ -1,39 +1,44 @@
 // @flow
 //
 
-import React, { Component } from 'react'
-import { EditorState } from 'draft-js'
-import Editor from 'draft-js-plugins-editor'
-import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin'
-import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin'
-
 import 'draft-js/dist/Draft.css'
 import 'draft-js-inline-toolbar-plugin/lib/plugin.css'
 import 'draft-js-side-toolbar-plugin/lib/plugin.css'
+
+import React, { Component } from 'react'
+import Editor from 'draft-js-plugins-editor'
+import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin'
+import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin'
+import { connectPageEditor } from 'state'
 
 const sideToolbarPlugin = createSideToolbarPlugin()
 const inlineToolbarPlugin = createInlineToolbarPlugin()
 const { SideToolbar } = sideToolbarPlugin
 const { InlineToolbar } = inlineToolbarPlugin
 
-class DraftingArea extends Component {
+type DraftingProps = {
+  page: Note,
+  insertPage: (page: Note) => void
+}
+
+export class DraftingArea extends Component<DraftingProps, {}> {
   editor: typeof Editor
-  state: HasEditorState = {
-    editorState: EditorState.createEmpty()
-  }
 
   componentDidMount() {
     this.editor.focus()
   }
 
   render() {
-    const update = editorState => this.setState({ editorState })
+    const { page, insertPage } = this.props
+    const update = editorState => insertPage(page.update(editorState))
+
+    if (!page.content) return <div />
 
     return (
       <div>
         <Editor
           ref={editor => (this.editor = editor)}
-          editorState={this.state.editorState}
+          editorState={page.content}
           plugins={[sideToolbarPlugin, inlineToolbarPlugin]}
           onChange={update}
         />
@@ -44,4 +49,4 @@ class DraftingArea extends Component {
   }
 }
 
-export default DraftingArea
+export default connectPageEditor(DraftingArea)

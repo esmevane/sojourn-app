@@ -5,8 +5,13 @@ import * as Theme from 'themes'
 
 export const Content = styled.main`
   color: ${Theme.foreground};
-  padding: 1em 10em;
+
+  display: grid;
+  grid-template-areas: "left-content interior right-content";
+  grid-template-columns: 1fr 3fr 1fr;
 `
+
+export const ContentInterior = styled.section`grid-column: interior;`
 
 export const Glance = styled.footer`
   border-top: 1px solid ${Theme.lightShadow};

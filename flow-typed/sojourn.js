@@ -1,37 +1,47 @@
-import { EditorState } from 'draft-js'
-
-declare type Parse = string => string
-declare type Content = string
 declare type Id = string
 declare type Title = string
+declare type Slug = string
+declare type EditorContent = Draft$EditorState
+declare type Pages = object<Slug, Note>
 
-declare interface Note { +id: Id, +title: Title, +content: Content }
+declare interface Note {
+  +id: Id,
+  +slug: Slug,
+  +title: Title,
+  +content: EditorContent,
+  update(content: EditorContent): Note
+}
 
-declare type Action = { +type: string, +payload?: {} }
+declare type NoteOptions = {
+  id?: Id,
+  slug?: Slug,
+  title?: Title,
+  content?: EditorContent
+}
+
+declare type Action =
+  | { +type: string, +payload?: any }
+  | {| +type: 'InsertPage', +payload: Note |}
+  | {| +type: 'RemovePage', +payload: Slug |}
+
 declare type Showable = { +show: boolean }
-declare type ModalState = Showable
-declare type DrawerState = Showable
-declare type MenuState = Showable
+declare type PageContent = { +page: Note }
+declare type RecordState<T> = {
+  +records: object<string, T>
+}
 
 declare type UiState = {
-  +drawer: DrawerState,
-  +menu: MenuState,
-  +modal: ModalState
+  +drawer: Showable,
+  +menu: Showable,
+  +modal: Showable
 }
 
-declare type State = { +ui: UiState }
-declare type HasContent = { content: Content }
+declare type State = { +ui: UiState, +pages: RecordState<Note> }
 declare type HasChildren = { children?: any }
-declare type HasEditorState = { editorState: typeof EditorState }
+declare type HasEditorState = { editorState: Draft$EditorState }
+declare type HasPage = { page: Note }
+declare type HasInsertPage = { insertPage: (page: Note) => void }
 declare type HasKey = { key: string }
 declare type HasLocation = { location: History$Location }
-
-declare interface Storage {
-  get(key: string): any,
-  all(): Array<any>,
-  put(key: Id, value: any): void,
-  remove(key: string): void,
-  flush(): void
-}
 
 declare type Stylesheet = { [string]: string }
