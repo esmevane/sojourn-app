@@ -10,6 +10,7 @@ import Editor from 'draft-js-plugins-editor'
 import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin'
 import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin'
 import { connectPageEditor } from 'state'
+import { Container } from './styles'
 
 const sideToolbarPlugin = createSideToolbarPlugin()
 const inlineToolbarPlugin = createInlineToolbarPlugin()
@@ -18,7 +19,8 @@ const { InlineToolbar } = inlineToolbarPlugin
 
 type DraftingProps = {
   page: Note,
-  insertPage: (page: Note) => void
+  insertPage: (page: Note) => void,
+  onFocus: () => void
 }
 
 export class DraftingArea extends Component<DraftingProps, {}> {
@@ -35,7 +37,7 @@ export class DraftingArea extends Component<DraftingProps, {}> {
     if (!page.content) return <div />
 
     return (
-      <div>
+      <Container>
         <Editor
           ref={editor => (this.editor = editor)}
           editorState={page.content}
@@ -44,7 +46,7 @@ export class DraftingArea extends Component<DraftingProps, {}> {
         />
         <SideToolbar />
         <InlineToolbar />
-      </div>
+      </Container>
     )
   }
 }

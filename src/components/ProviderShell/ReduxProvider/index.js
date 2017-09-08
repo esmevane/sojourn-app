@@ -7,9 +7,12 @@ import * as State from 'state'
 type ProviderProps = { children?: React$Element<any> }
 
 const store = State.createStore()
-const ReduxProvider = ({ children }: ProviderProps): React$Element<any> =>
-  <Provider store={store}>
-    {children}
-  </Provider>
+const ReduxProvider = ({
+  children
+}: ProviderProps): React$Element<any> => (
+  <Provider store={store}>{children}</Provider>
+)
+
+if (typeof window !== 'undefined') window.store = store
 
 export default ReduxProvider

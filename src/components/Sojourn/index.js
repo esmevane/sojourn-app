@@ -10,18 +10,15 @@ import { Layout } from 'themes/components'
 import {
   Content,
   ContentInterior,
-  Headline,
   Glance,
   Letterhead
 } from './styles'
 
 import EditablePage from 'components/EditablePage'
 
-const Sojourn = (props: any): React$Element<any> =>
+const Sojourn = (props: any): React$Element<any> => (
   <Layout>
-    <Letterhead>
-      <Headline>sojourn</Headline>
-    </Letterhead>
+    <Letterhead />
     <Content>
       <ContentInterior>
         <EditablePage />
@@ -32,5 +29,6 @@ const Sojourn = (props: any): React$Element<any> =>
     <Menu />
     <Modal />
   </Layout>
+)
 
 export default Sojourn

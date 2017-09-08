@@ -4,10 +4,11 @@ import styled from 'styled-components'
 import * as Theme from 'themes'
 
 export const Content = styled.main`
+  background-color: ${Theme.recessed};
   color: ${Theme.foreground};
 
   display: grid;
-  grid-template-areas: "left-content interior right-content";
+  grid-template-areas: 'left-content interior right-content';
   grid-template-columns: 1fr 3fr 1fr;
 `
 
@@ -29,12 +30,7 @@ export const Letterhead = styled.header`
 
   display: flex;
   justify-content: center;
+  z-index: 1;
 
   padding: 0.5em;
-`
-
-export const Headline = styled.h1`
-  color: ${Theme.shadow};
-  font-family: 'Overpass Mono';
-  font-size: 1.5em;
 `

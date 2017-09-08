@@ -10,7 +10,6 @@ const getPageWithSlug = (state: State, props: any): PageContent => {
   const slug: Slug = params.path || ''
   const pages: Pages = selectPages(state)
   const page: Note = Reflect.get(pages, slug) || Notes.create(slug)
-  console.log('GetPageWithSlug debug', `Slug: ${slug}`)
 
   return {
     page
