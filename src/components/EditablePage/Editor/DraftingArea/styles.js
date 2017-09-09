@@ -8,10 +8,8 @@ export const Container = styled.div`
   box-shadow: ${Theme.lightBoxShadow};
   color: ${Theme.foreground};
 
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
+  min-height: ${Theme.largeContent}px;
 
-  height: ${Theme.largeContent}px;
   margin-top: 1em;
   padding: 1em;
 `

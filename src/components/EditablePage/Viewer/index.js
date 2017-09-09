@@ -1,16 +1,15 @@
 // @flow
 
 import React from 'react'
-import { Edit } from 'react-feather'
 import { Link } from 'react-router-dom'
 import { stateToHTML } from 'draft-js-export-html'
-import { Container, Controls } from './styles'
+import { Container, Controls, EditButton } from './styles'
 
 const Viewer = ({ page }: any): React$Element<any> => (
   <Container>
     <Controls>
       <Link to="/edit">
-        <Edit />
+        <EditButton />
       </Link>
     </Controls>
     <div

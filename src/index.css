@@ -9,10 +9,24 @@ body {
   height: 100%;
   width: 100%;
 
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
 
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
 }
 
 #root {

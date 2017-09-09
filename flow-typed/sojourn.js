@@ -7,10 +7,11 @@ declare type TextContent = string
 
 declare type HasChildren = { children?: any }
 declare type HasEditorState = { editorState: Draft$EditorState }
-declare type HasPage = { page: Note }
 declare type HasInsertPage = { insertPage: (page: Note) => void }
 declare type HasKey = { key: string }
 declare type HasLocation = { location: History$Location }
+declare type HasPage = { page: Note }
+declare type HasUpdate = { update: (theUpdate: any) => any }
 declare type PageContent = { +page: Note }
 
 declare type Stylesheet = { [string]: string }

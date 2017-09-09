@@ -18,9 +18,8 @@ const { SideToolbar } = sideToolbarPlugin
 const { InlineToolbar } = inlineToolbarPlugin
 
 type DraftingProps = {
-  page: Note,
-  insertPage: (page: Note) => void,
-  onFocus: () => void
+  page: Note & HasUpdate,
+  insertPage: (page: Note) => void
 }
 
 export class DraftingArea extends Component<DraftingProps, {}> {
