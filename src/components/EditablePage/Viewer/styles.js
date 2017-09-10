@@ -5,7 +5,9 @@ import styled from 'styled-components'
 import { Edit } from 'react-feather'
 import * as Theme from 'themes'
 
-export const EditButton = () => <Edit color={Theme.colors.primary} />
+export const EditButton = () => (
+  <Edit color={Theme.colors.primary.css()} />
+)
 
 export const Container = styled.section`
   width: 100%;

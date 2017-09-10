@@ -1,6 +1,5 @@
 // @flow
 
-import events from 'events'
 import { ContentState, EditorState } from 'draft-js'
 
 export const init = (): EditorContent => EditorState.createEmpty()

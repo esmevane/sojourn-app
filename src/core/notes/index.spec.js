@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import Store from '../../core/store'
 import Notes, * as NotesEvents from './index'
 import NoteEntity from './entity'
+import * as NoteValidations from './validations'
 
 describe('Notes', () => {
   const store = new Store.Memory()
@@ -13,6 +14,20 @@ describe('Notes', () => {
 
   it('exists', () => {
     expect(Notes).to.be.ok
+  })
+
+  describe('#actions', () => {
+    it('is a list of possible actions', () => {
+      const expectation = [
+        NotesEvents.NOTES_GET,
+        NotesEvents.NOTES_FIND,
+        NotesEvents.NOTES_CREATE,
+        NotesEvents.NOTES_UPDATE,
+        NotesEvents.NOTES_REMOVE
+      ]
+
+      expect(notes.actions()).to.eql(expectation)
+    })
   })
 
   describe('#create', () => {
@@ -92,7 +107,10 @@ describe('Notes', () => {
     it('promises a new note', () => {
       return notes
         .init()
-        .then(subject => expect(subject.isEmpty()).to.be.true)
+        .then(
+          subject =>
+            expect(NoteValidations.isEmpty(subject)).to.be.true
+        )
     })
   })
 

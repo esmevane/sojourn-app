@@ -2,6 +2,7 @@
 
 import { delay } from 'redux-saga'
 import { call, takeEvery } from 'redux-saga/effects'
+import { Echo } from 'state/actions'
 
 export const log = function*(action: Action): Generator<*, *, *> {
   yield call(delay, 300)
@@ -9,5 +10,5 @@ export const log = function*(action: Action): Generator<*, *, *> {
 }
 
 export const echo = function*(): Generator<*, *, *> {
-  yield takeEvery('echo', log)
+  yield takeEvery(Echo, log)
 }

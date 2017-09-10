@@ -1,5 +1,11 @@
 // @flow
 
+export const Echo: 'Echo' = 'Echo'
+export const echo = (payload: any): Action => ({
+  type: Echo,
+  payload
+})
+
 export const Empty: 'Empty' = 'Empty'
 export const emptyAction = (): Action => ({ type: Empty })
 

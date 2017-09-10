@@ -4,6 +4,7 @@ import { expect } from 'chai'
 import { delay } from 'redux-saga'
 import { call, takeEvery } from 'redux-saga/effects'
 import * as Echo from './echo'
+import * as Actions from 'state/actions'
 
 describe('echo', () => {
   const generator = Echo.echo()
@@ -11,12 +12,12 @@ describe('echo', () => {
   it('takes every { type: "echo" } action', () => {
     const subject = generator.next().value
 
-    expect(subject).to.eql(takeEvery('echo', Echo.log))
+    expect(subject).to.eql(takeEvery(Actions.Echo, Echo.log))
   })
 })
 
 describe('log', () => {
-  const action = { type: 'echo' }
+  const action = Actions.echo()
   const generator = Echo.log(action)
 
   it('delays', () => {

@@ -11,7 +11,7 @@ export const NOTES_CREATE = 'notes.create'
 export const NOTES_UPDATE = 'notes.update'
 export const NOTES_REMOVE = 'notes.remove'
 
-export default class Notes {
+export default class Notes implements Repo<Note> {
   events: EventEmitter = new EventEmitter()
   store: Storage
 
@@ -19,7 +19,17 @@ export default class Notes {
     this.store = store
   }
 
-  async create(note: NoteEntity): Promise<NoteEntity> {
+  actions(): Array<string> {
+    return [
+      NOTES_GET,
+      NOTES_FIND,
+      NOTES_CREATE,
+      NOTES_UPDATE,
+      NOTES_REMOVE
+    ]
+  }
+
+  async create(note: Note): Promise<Note> {
     await this.store.put(note.id, note)
 
     this.events.emit(NOTES_CREATE, note)
@@ -27,19 +37,19 @@ export default class Notes {
     return await this.store.get(note.id)
   }
 
-  async find(): Promise<Array<NoteEntity>> {
-    const notes: Array<NoteEntity> = await this.store.all()
+  async find(): Promise<Array<Note>> {
+    const notes: Array<Note> = await this.store.all()
     this.events.emit(NOTES_FIND, notes)
     return notes
   }
 
-  async get(id: string): Promise<NoteEntity> {
+  async get(id: string): Promise<Note> {
     const note: NoteEntity = await this.store.get(id)
     this.events.emit(NOTES_GET, note)
     return note
   }
 
-  async init(): Promise<NoteEntity> {
+  async init(): Promise<Note> {
     return new NoteEntity()
   }
 
@@ -47,12 +57,16 @@ export default class Notes {
     this.events.on(channel, listener)
   }
 
-  async remove(note: NoteEntity): Promise<void> {
+  off(channel: string, listener: Function) {
+    this.events.removeListener(channel, listener)
+  }
+
+  async remove(note: Note): Promise<void> {
     await this.store.remove(note.id)
     this.events.emit(NOTES_REMOVE, note)
   }
 
-  async update(note: NoteEntity): Promise<NoteEntity> {
+  async update(note: Note): Promise<Note> {
     await this.store.put(note.id, note)
 
     this.events.emit(NOTES_UPDATE, note)

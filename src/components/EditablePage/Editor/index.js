@@ -4,7 +4,7 @@ import React from 'react'
 import { ArrowLeft } from 'react-feather'
 import { Link } from 'react-router-dom'
 
-import { Container, Content, Controls } from './styles'
+import { Container, Controls } from './styles'
 import DraftingArea from './DraftingArea'
 
 const Editor = (props: any): React$Element<any> => (

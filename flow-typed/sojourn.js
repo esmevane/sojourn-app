@@ -4,6 +4,7 @@ declare type Slug = string
 declare type EditorContent = Draft.EditorState
 declare type Pages = object<Slug, Note>
 declare type TextContent = string
+declare type Channel = string
 
 declare type HasChildren = { children?: any }
 declare type HasEditorState = { editorState: Draft$EditorState }
@@ -26,6 +27,12 @@ declare type NoteOptions = {
   slug?: Slug,
   title?: Title,
   content?: EditorContent
+}
+
+declare type EventChannel = {
+  take: Function,
+  flush: Function,
+  close: Function
 }
 
 declare type NoteAttributes = {
@@ -54,6 +61,21 @@ declare interface Storage {
   put(key: Id, value: any): void,
   remove(key: string): void,
   flush(): void
+}
+
+declare interface Repo<E> {
+  events: Node$EventEmitter,
+  store: Storage,
+
+  actions(): Array<string>,
+  create(entity: E): Promise<E>,
+  find(): Promise<Array<E>>,
+  get(id: Id): Promise<E>,
+  init(): Promise<E>,
+  on(channel: Channel, listener: Function): void,
+  off(channel: string, listener: Function): void,
+  remove(note: E): Promise<void>,
+  update(note: E): Promise<E>
 }
 
 declare interface Note {
