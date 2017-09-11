@@ -10,6 +10,7 @@
     "draft-js-plugins-editor": "beta",
     "draft-js-side-toolbar-plugin": "beta",
     "feather-icons": "^3.2.2",
+    "gun": "^0.8.4",
     "history": "^4.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

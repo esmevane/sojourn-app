@@ -1,7 +1,8 @@
 // @flow
 
-import Memory from "./memory"
+import Gun from './gun'
+import Memory from './memory'
 
-const strategies = { Memory }
+const strategies = { Gun, Memory }
 
 export default strategies

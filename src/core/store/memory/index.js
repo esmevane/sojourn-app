@@ -3,23 +3,23 @@
 const memory: any = {}
 
 export default class Memory implements Storage {
-  all(): Array<any> {
+  async all(): Promise<Array<any>> {
     return Object.keys(memory).map(key => memory[key])
   }
 
-  get(key: string): any {
+  async get(key: string): Promise<any> {
     return memory[key]
   }
 
-  flush(): void {
+  async flush(): Promise<void> {
     Object.keys(memory).map(key => this.remove(key))
   }
 
-  put(key: string, value: any): void {
+  async put(key: string, value: any): Promise<void> {
     memory[key] = value
   }
 
-  remove(key: string): void {
+  async remove(key: string): Promise<void> {
     delete memory[key]
   }
 }

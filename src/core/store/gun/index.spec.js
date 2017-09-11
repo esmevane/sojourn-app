@@ -1,10 +1,10 @@
 // @flow
 
 import { expect } from 'chai'
-import Memory from './index'
+import Gun from './index'
 
-describe('Memory', () => {
-  const store = new Memory()
+describe('Gun', () => {
+  const store = new Gun()
 
   describe('#all', () => {
     it('returns all inserted items', () => {
@@ -28,7 +28,7 @@ describe('Memory', () => {
   describe('#put', () => {
     it('puts the given item in the given key', () => {
       const key = 'some-id-probably'
-      const value = {}
+      const value = "{ blends: 'what' }"
 
       return store
         .put(key, value)

@@ -56,11 +56,11 @@ declare type UiState = {
 declare type State = { +ui: UiState, +pages: RecordState<Note> }
 
 declare interface Storage {
-  get(key: string): any,
-  all(): Array<any>,
-  put(key: Id, value: any): void,
-  remove(key: string): void,
-  flush(): void
+  get(key: string): Promise<any>,
+  all(): Promise<Array<any>>,
+  put(key: Id, value: any): Promise<void>,
+  remove(key: string): Promise<void>,
+  flush(): Promise<void>
 }
 
 declare interface Repo<E> {
