@@ -24,13 +24,33 @@ export const showMenu = (): Action => ({ type: ShowMenu })
 export const showModal = (): Action => ({ type: ShowModal })
 
 export const InsertPage = 'InsertPage'
-export const insertPage = (page: Note): Action => ({
+export const insertPage = (payload: Note): Action => ({
   type: InsertPage,
-  payload: page
+  payload
 })
 
 export const RemovePage = 'RemovePage'
-export const removePage = (slug: Slug): Action => ({
+export const removePage = (payload: Slug): Action => ({
   type: RemovePage,
-  payload: slug
+  payload
+})
+
+export const RequestPage = 'RequestPage'
+export const requestPage = (payload: Id): Action => ({
+  type: RequestPage,
+  payload
+})
+
+export const RequestPageSuccess = 'RequestPageSuccess'
+export const requestPageSuccess = (payload: Id): Action => ({
+  type: RequestPageSuccess,
+  payload
+})
+
+export const RequestPageFailure = 'RequestPageFailure'
+export const requestPageFailure = (
+  payload: RequestPageError
+): Action => ({
+  type: RequestPageFailure,
+  payload
 })

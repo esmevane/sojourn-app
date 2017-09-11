@@ -16,11 +16,15 @@ declare type HasUpdate = { update: (theUpdate: any) => any }
 declare type PageContent = { +page: Note }
 
 declare type Stylesheet = { [string]: string }
+declare type Action = { +type: string, +payload?: any }
+declare type RequestPageError = { error: Error, id: Id }
 
-declare type Action =
-  | { +type: string, +payload?: any }
-  | {| +type: 'InsertPage', +payload: Note |}
-  | {| +type: 'RemovePage', +payload: Slug |}
+declare type RawNote = {
+  id: Id,
+  slug: Slug,
+  title: Title,
+  content: {}
+}
 
 declare type NoteOptions = {
   id?: Id,

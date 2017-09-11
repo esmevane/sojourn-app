@@ -44,7 +44,7 @@ export default class Notes implements Repo<Note> {
   }
 
   async get(id: string): Promise<Note> {
-    const note: NoteEntity = await this.store.get(id)
+    const note: Note = await this.store.get(id)
     this.events.emit(NOTES_GET, note)
     return note
   }
