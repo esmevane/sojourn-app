@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 import * as Theme from 'themes'
 
-export const Content = styled.main`
+export const PageContent = styled.main`
   background-color: ${Theme.recessed};
   color: ${Theme.foreground};
 
@@ -12,7 +12,17 @@ export const Content = styled.main`
   grid-template-columns: 1fr 3fr 1fr;
 `
 
-export const ContentInterior = styled.section`grid-column: interior;`
+export const PageControls = styled.div`
+  border-bottom: 1px solid ${Theme.lightShadow};
+
+  grid-column-start: left-content;
+  grid-column-end: right-content;
+
+  height: ${Theme.largest * 1.5}px;
+  padding: 0 ${Theme.largest}px;
+`
+
+export const PageInterior = styled.section`grid-column: interior;`
 
 export const Glance = styled.footer`
   border-top: 1px solid ${Theme.lightShadow};

@@ -2,7 +2,7 @@
 
 import chroma from 'chroma-js'
 
-export const extent = 32
+export const baseSizeUnit = 32
 export const borderRadius = '3px'
 export const transition = '0.3s'
 export const foreground = 'midnightblue'
@@ -27,6 +27,12 @@ export const background = colors.page
   .brighten(0.4)
   .css()
 
+export const subtle = colors.page
+  .desaturate(0.3)
+  .brighten(0.4)
+  .darken(0.1)
+  .css()
+
 export const recessed = colors.page
   .desaturate(0.3)
   .brighten(0.4)
@@ -36,10 +42,10 @@ export const recessed = colors.page
 export const paper = colors.white.alpha(0.8)
 export const shade = colors.foreground.alpha(0.8).css()
 
-export const largest = extent
-export const medium = extent * 0.75
-export const small = extent * 0.5
-export const largeContent = extent * 10
+export const largest = baseSizeUnit
+export const medium = baseSizeUnit * 0.75
+export const small = baseSizeUnit * 0.5
+export const largeContent = baseSizeUnit * 10
 
 export const sixth = (size: number): number => size * 0.1875
 

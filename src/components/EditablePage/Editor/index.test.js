@@ -11,8 +11,4 @@ describe('Editor', () => {
   it('renders a connected DraftingArea', () => {
     expect(editor.find('Connect(DraftingArea)')).to.have.length(1)
   })
-
-  it('renders a Link back', () => {
-    expect(editor.find('Link')).to.have.length(1)
-  })
 })
