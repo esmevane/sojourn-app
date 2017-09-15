@@ -7,7 +7,7 @@ import { Notes, Store } from 'core'
 import * as Actions from 'state/actions'
 import * as Utils from 'state/sagas/utils'
 
-export const repo = new Notes(new Store.Gun())
+export const repo = new Notes(new Store.Pouch())
 
 if (typeof window !== 'undefined') window.repo = repo
 

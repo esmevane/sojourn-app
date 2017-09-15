@@ -11,4 +11,8 @@ describe('Store', () => {
   it('exposes Memory', () => {
     expect(Store.Memory).to.be.ok
   })
+
+  it('exposes Pouch', () => {
+    expect(Store.Pouch).to.be.ok
+  })
 })

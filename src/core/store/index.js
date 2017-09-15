@@ -2,7 +2,8 @@
 
 import Gun from './gun'
 import Memory from './memory'
+import Pouch from './pouch'
 
-const strategies = { Gun, Memory }
+const adapters = { Gun, Memory, Pouch }
 
-export default strategies
+export default adapters
