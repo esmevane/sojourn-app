@@ -5,11 +5,11 @@ import NoteEntity from './entity'
 
 const { EventEmitter } = events
 
-export const NOTES_GET = 'notes.get'
-export const NOTES_FIND = 'notes.find'
-export const NOTES_CREATE = 'notes.create'
-export const NOTES_UPDATE = 'notes.update'
-export const NOTES_REMOVE = 'notes.remove'
+export const NOTES_GET = 'Notes.Get'
+export const NOTES_FIND = 'Notes.Find'
+export const NOTES_CREATE = 'Notes.Create'
+export const NOTES_UPDATE = 'Notes.Update'
+export const NOTES_REMOVE = 'Notes.Remove'
 
 export default class Notes implements Repo<Note> {
   events: EventEmitter = new EventEmitter()

@@ -62,6 +62,6 @@ export default class Gun implements Storage {
   async remove(key: string): Promise<void> {
     const doc = await this.getRecord(key)
 
-    doc ? this.data.remove(doc) : undefined
+    if (doc) this.data.remove(doc)
   }
 }
