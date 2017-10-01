@@ -1,6 +1,11 @@
 // @flow
 
 import styled from 'styled-components'
+import createTheme from 'themes'
+
+const Theme = createTheme()
+const barSize = `minmax(${Theme.sizes.large}px, ${Theme.sizes
+  .giant}px)`
 
 export const Layout = styled.div`
   pointer-events: none;
@@ -12,8 +17,8 @@ export const Layout = styled.div`
   grid-template-areas: 'header header header' 'aside main sidebar'
     'footer footer footer';
   grid-template-columns: 1fr 8fr 1fr;
-  grid-template-rows: minmax(30px, 40px) auto minmax(30px, 40px);
-  transition: 0.3s ease-in-out;
+  grid-template-rows: ${barSize} auto ${barSize};
+  transition: ${Theme.transition.duration};
 `
 
 export const Footer = styled.footer`
@@ -21,9 +26,13 @@ export const Footer = styled.footer`
 
   grid-area: footer;
 
-  background-color: rgba(0, 0, 0, 0.25);
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  color: rgba(255, 200, 255, 0.9);
+  background-color: ${Theme.colors.black.alpha(0.25).css()};
+  border-top: ${Theme.sizes.lines.thin}px solid
+    ${Theme.colors.black.alpha(0.15).css()};
+  color: ${Theme.colors.accent
+    .brighten(3.25)
+    .alpha(0.75)
+    .css()};
 
   display: flex;
   justify-content: center;
@@ -35,17 +44,18 @@ export const Header = styled.header`
 
   grid-area: header;
 
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 24px;
+  background-color: ${Theme.colors.white.css()};
+  color: ${Theme.colors.black.alpha(0.5).css()};
+  font-size: ${Theme.sizes.large}px;
 
   display: grid;
   grid-template-areas: 'menu center settings';
-  grid-template-columns: 40px auto 40px;
+  grid-template-columns: ${Theme.sizes.giant}px auto
+    ${Theme.sizes.giant}px;
 
   .button {
-    color: rgba(102, 77, 182, 0.5);
-    stroke-width: 1px;
+    color: ${Theme.colors.accent.alpha(0.5).css()};
+    stroke-width: ${Theme.sizes.lines.thin}px;
   }
 `
 
@@ -76,9 +86,9 @@ export const Overlay = styled.div`
 
   grid-area: header / header / footer / footer;
 
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: ${Theme.colors.white.alpha(0.8).css()};
   opacity: ${props => (props.show ? 1 : 0)};
-  transition: 0.3s ease-in-out;
+  transition: ${Theme.transition.duration};
 `
 
 export const Note = styled.div`
@@ -86,28 +96,33 @@ export const Note = styled.div`
 
   grid-area: main;
 
-  background-color: rgba(245, 245, 245, 0.85);
-  border-radius: 3px;
-  border-top: 6px solid transparent;
+  background-color: ${Theme.colors.white
+    .darken(0.2)
+    .alpha(0.85)
+    .css()};
+
+  border-radius: ${Theme.sizes.tiny}px;
+  border-top: ${Theme.sizes.lines.fat}px solid;
   border-image: linear-gradient(
       270deg,
-      rgba(102, 77, 182, 0.5) 50%,
-      rgba(169, 56, 182, 0.4)
+      ${Theme.colors.accent.alpha(0.5).css()} 50%,
+      ${Theme.colors.highlight.alpha(0.5).css()}
     )
     1;
-  box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 ${Theme.sizes.tiny}px ${Theme.sizes.base}px -${Theme
+      .sizes.base * 0.4}px ${Theme.colors.black.alpha(0.5).css()};
 
   display: grid;
   grid-template-areas: 'controls' 'content';
-  grid-template-rows: 30px auto;
+  grid-template-rows: ${Theme.sizes.large}px auto;
 
-  margin: 1em;
-  padding-bottom: 6px;
+  margin: ${Theme.sizes.base}px;
+  padding-bottom: ${Theme.sizes.tiny}px;
 `
 
 export const NoteControls = styled.div`
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 0.5);
+  background-color: ${Theme.colors.white};
+  color: ${Theme.colors.black.alpha(0.5).css()};
 
   grid-area: controls;
 
@@ -118,16 +133,16 @@ export const NoteControls = styled.div`
   .button {
     cursor: pointer;
 
-    color: rgba(0, 0, 0, 0.2);
-    height: 16px;
-    stroke-width: 1px;
+    color: ${Theme.colors.black.alpha(0.2).css()};
+    height: ${Theme.sizes.base}px;
+    stroke-width: ${Theme.sizes.lines.thin}px;
 
-    transition: 0.3s ease-in-out;
+    transition: ${Theme.transition.duration};
 
-    margin-right: 0.5em;
+    margin-right: ${Theme.sizes.tiny}px;
 
     :hover {
-      color: rgba(0, 0, 0, 0.5);
+      color: ${Theme.colors.black.alpha(0.5).css()};
     }
   }
 `
@@ -140,9 +155,9 @@ export const NoteContent = styled.div`
   align-items: center;
 
   .filler {
-    color: rgba(102, 77, 182, 0.25);
-    stroke-width: 4px;
-    height: 48px;
-    width: 48px;
+    color: ${Theme.colors.accent.alpha(0.2).css()};
+    stroke-width: ${Theme.sizes.lines.large}px;
+    height: ${Theme.sizes.giant}px;
+    width: ${Theme.sizes.giant}px;
   }
 `
