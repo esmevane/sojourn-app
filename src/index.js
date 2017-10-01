@@ -3,8 +3,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import 'typeface-open-sans'
-import 'typeface-overpass-mono'
+import 'typeface-montserrat'
 import 'index.css'
 
 import App from 'components/App'

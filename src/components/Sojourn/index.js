@@ -1,39 +1,52 @@
 // @flow
 
 import React from 'react'
+import * as Icons from 'react-feather'
 
-import Drawer from 'components/Drawer'
-import Menu from 'components/Menu'
-import Modal from 'components/Modal'
+import { connectOverlay, controlsOverlay } from 'state/connectors'
 
-import { Layout } from 'themes/components'
 import {
-  Glance,
-  Letterhead,
-  PageContent,
-  PageControls,
-  PageInterior
+  Footer,
+  Header,
+  HeaderCenter,
+  HeaderSettings,
+  Layout,
+  Overlay,
+  Note,
+  NoteControls,
+  NoteContent
 } from './styles'
 
-import EditablePage from 'components/EditablePage'
-import EditablePageControls from 'components/EditablePageControls'
-
-const Sojourn = (props: any): React$Element<any> => (
-  <Layout>
-    <Letterhead />
-    <PageContent>
-      <PageControls>
-        <EditablePageControls />
-      </PageControls>
-      <PageInterior>
-        <EditablePage />
-      </PageInterior>
-    </PageContent>
-    <Glance>@ Something</Glance>
-    <Drawer />
-    <Menu />
-    <Modal />
-  </Layout>
+const ConnectedOverlay = connectOverlay(Overlay)
+const Sojourn = ({ hideOverlay, showOverlay }: any) => (
+  <div>
+    <Layout>
+      <Note>
+        <NoteControls>
+          <Icons.Edit className="button" />
+          <Icons.Star className="button" />
+          <Icons.Bookmark className="button" />
+          <Icons.Trash2 className="button" />
+          <Icons.X className="button" />
+        </NoteControls>
+        <NoteContent>
+          <Icons.Circle className="filler" />
+        </NoteContent>
+      </Note>
+    </Layout>
+    <Layout>
+      <Header>
+        <HeaderCenter>sojourn</HeaderCenter>
+        <HeaderSettings>
+          <Icons.Menu className="button" onClick={showOverlay} />
+        </HeaderSettings>
+      </Header>
+      <Footer>@ something</Footer>
+    </Layout>
+    <Layout>
+      <ConnectedOverlay onClick={hideOverlay} />
+    </Layout>
+  </div>
 )
 
-export default Sojourn
+export default controlsOverlay(Sojourn)

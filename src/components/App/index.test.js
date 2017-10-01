@@ -13,6 +13,6 @@ describe('App', () => {
   })
 
   it('renders the Sojourn component', () => {
-    expect(app.find('Sojourn')).to.have.length(1)
+    expect(app.find('Connect(Sojourn)')).to.have.length(1)
   })
 })

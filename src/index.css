@@ -4,31 +4,18 @@
 
 html,
 body {
+  background: linear-gradient(
+      rgba(212, 212, 212, 1),
+      rgba(230, 222, 230, 0.85),
+      rgba(172, 186, 255, 0.5)
+    ),
+    url('./images/river.jpeg');
+  background-size: cover;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+
   margin: 0;
-  padding: 0;
   height: 100%;
   width: 100%;
-
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  font-size: 1.75em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: lighter;
-}
-
-#root {
-  flex: 1;
 }
