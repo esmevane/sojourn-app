@@ -4,17 +4,25 @@ import chroma from 'chroma-js'
 
 export default () => {
   const baseSize = 16
+  const accent = chroma('rgb(102, 77, 182)')
+  const highlight = accent
+    .saturate(1.5)
+    .brighten(0.95)
+    .set('hcl.h', '*1.05')
 
   const colors = {
-    accent: chroma('rgb(102, 77, 182)'),
-    highlight: chroma('rgb(169, 56, 182)'),
+    accent,
+    highlight,
     black: chroma('black'),
-    white: chroma('white')
+    white: chroma('white'),
+    scale: (start: string, end: string) =>
+      chroma.scale([start, end]).mode('hcl')
   }
 
   const sizes = {
     lines: {
       thin: 1,
+      bold: 2,
       fat: 6,
       large: 4
     },
@@ -32,7 +40,9 @@ export default () => {
     colors,
     sizes,
     transition: {
-      duration: transitionTime
+      duration: transitionTime,
+      slow: '0.6s',
+      delay: '0.2s'
     },
     borderRadius
   }

@@ -11,11 +11,10 @@ const maybeFirstChild = children =>
 
 const ProviderShell = ({
   children
-}: ProviderShellProps): React$Element<any> =>
+}: ProviderShellProps): React$Element<any> => (
   <RouterProvider>
-    <ReduxProvider>
-      {maybeFirstChild(children)}
-    </ReduxProvider>
+    <ReduxProvider>{maybeFirstChild(children)}</ReduxProvider>
   </RouterProvider>
+)
 
 export default ProviderShell
