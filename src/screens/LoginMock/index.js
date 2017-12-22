@@ -122,7 +122,7 @@ export default () => (
             <Title>Log in or sign up</Title>
           </Layout.Flex>
         </Layout.Panes.Controls>
-        <Layout.Panes.Content style={{ strokeWidth: '1px' }}>
+        <Layout.Panes.Content>
           <Layout.Flex column>
             <Label>
               <User />

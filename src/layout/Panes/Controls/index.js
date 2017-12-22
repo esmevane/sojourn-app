@@ -16,10 +16,9 @@ export const Controls = styled.div`
     cursor: pointer;
 
     color: ${Theme.colors.black.alpha(0.2).css()};
-    height: ${Theme.sizes.base}px;
-
     transition: ${Theme.transition.duration};
 
+    height: ${Theme.sizes.base}px;
     margin-right: ${Theme.sizes.tiny}px;
 
     :hover {

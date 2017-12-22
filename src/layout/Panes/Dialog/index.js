@@ -14,16 +14,16 @@ export const Dialog = styled.div`
     .css()};
 
   border-radius: ${Theme.sizes.tiny}px;
-  box-shadow: 0 ${Theme.sizes.tiny}px ${Theme.sizes.base}px -${Theme
-      .sizes.base * 0.4}px ${Theme.colors.black.alpha(0.5).css()};
+  box-shadow: 0 ${Theme.sizes.tiny}px ${Theme.sizes.base}px -${Theme.sizes
+      .base * 0.4}px ${Theme.colors.black.alpha(0.5).css()};
 
   display: grid;
   grid-template-areas: 'controls' 'content' 'actions';
-  grid-template-rows: ${Theme.sizes.giant * 1.5}px auto
+  grid-template-rows:
+    ${Theme.sizes.giant * 1.5}px 1fr
     ${Theme.sizes.giant * 1.5}px;
 
   margin: ${Theme.sizes.base}px auto;
-
-  width: 60%;
   min-height: ${Theme.sizes.giant * 7}px;
+  width: 60%;
 `

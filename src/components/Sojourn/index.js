@@ -45,11 +45,7 @@ const Sojourn = ({ location, hideOverlay, showOverlay }: any) => (
     <Layout.Base>
       <Layout.Content>
         <Layout.Flex endUp>
-          <Route
-            exact
-            path="/notifications"
-            component={NotificationsMock}
-          />
+          <Route exact path="/notifications" component={NotificationsMock} />
         </Layout.Flex>
       </Layout.Content>
     </Layout.Base>

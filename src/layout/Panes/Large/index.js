@@ -23,6 +23,5 @@ export const Large = styled.div`
     ${Theme.sizes.large}px;
 
   margin: ${Theme.sizes.base}px;
-
   width: 100%;
 `
